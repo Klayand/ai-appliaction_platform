@@ -2,7 +2,7 @@
 
 _AI application platform: where art meets algorithms and dreams meet pixels!_ 🚀
 
-![Smoking Tiger](./gallery/a_smoking_tiger.png)
+![Smoking Tiger](./gallery/A_smoking_tiger.png)
 
 ## Overview
 
