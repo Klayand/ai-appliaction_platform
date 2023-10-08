@@ -1,5 +1,5 @@
 import requests
-from utils import proxies, headers
+from ../utils import proxies, headers
 
 
 def image_to_text(filename):
