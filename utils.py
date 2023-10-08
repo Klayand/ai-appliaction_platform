@@ -4,12 +4,12 @@ import cv2
 import argparse
 import streamlit as st
 
+
+proxies = {'http': os.getenv('HTTPS_PROXY')}
+HUGGINGFACE_API_KEY = os.getenv('HUGGINGFACE_API_TOKEN')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 # headers = {"Authorization": f"Bearer {HUGGINGFACE_API_KEY}"}
 headers = {"Authorization": f"Bearer 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"}
-HUGGINGFACE_API_TOKEN = st.secrets['HUGGINGFACE_API_TOKEN']
-OPENAI_API_KEY = st.secrets['OPENAI_API_KEY']
-HTTPS_PROXY = st.secrets['HTTPS_PROXY']
-proxies = {'http': os.getenv('HTTPS_PROXY')}
 
 
 def show_image(title, image, width = 300):

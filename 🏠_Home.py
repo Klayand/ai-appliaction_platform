@@ -6,6 +6,7 @@ from utils import show_icon
 from streamlit_image_select import image_select
 from streamlit.runtime.scriptrunner import RerunData, RerunException
 
+load_dotenv(find_dotenv())
 
 def redirect(page_name: str):
     """A hack to make streamlit redirect to a different page"""

@@ -4,9 +4,12 @@ import os
 
 from utils import show_icon
 
+from dotenv import find_dotenv, load_dotenv
+
+load_dotenv(find_dotenv())
 
 def generate_audio():
-    os.environ['http_proxy'] = os.getenv('HTTPS_PROXY')
+    os.environ['http_proxy'] = "http://127.0.0.1:19180"
 
     st.set_page_config(page_title='Your Own Music Assistant', page_icon=":musical_keyboard:")
 

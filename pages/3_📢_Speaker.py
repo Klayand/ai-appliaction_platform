@@ -3,9 +3,12 @@ from backbones import image_to_text, text_to_speech, text_to_text
 import os
 from utils import show_icon
 
+from dotenv import find_dotenv, load_dotenv
+
+load_dotenv(find_dotenv())
 
 def generate_speech():
-    os.environ['http_proxy'] = os.getenv('HTTPS_PROXY')
+    os.environ['http_proxy'] = "http://127.0.0.1:19180"
 
     st.set_page_config(page_title='Story from Image', page_icon=":rainbow:")
 

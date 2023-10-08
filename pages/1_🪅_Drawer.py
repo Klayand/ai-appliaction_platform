@@ -2,9 +2,12 @@ import streamlit as st
 from backbones import text_to_image
 import os
 from utils import show_icon
+from dotenv import find_dotenv, load_dotenv
+
+load_dotenv(find_dotenv())
 
 def generate_image():
-    os.environ['http_proxy'] = os.getenv('HTTPS_PROXY')
+    os.environ['http_proxy'] = "http://127.0.0.1:19180"
 
     st.set_page_config(page_title='Generate Your Own Image', page_icon=":bridge_at_night:")
 
