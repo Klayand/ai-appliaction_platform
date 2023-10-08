@@ -46,7 +46,7 @@ def resize_image(image_path):
 
 
 def image_transfer():
-    model_state_path = '../checkpoint/model_state.pth'
+    model_state_path = 'checkpoint/model_state.pth'
 
     st.set_page_config(page_title='Image Style Transfer', page_icon=":collision:")
 
