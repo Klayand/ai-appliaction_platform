@@ -3,11 +3,11 @@ from io import StringIO
 import streamlit as st
 from backbones import summarize
 import os
-from utils import show_icon
-
+from utils import show_icon, proxies, headers
 from dotenv import find_dotenv, load_dotenv
 
 load_dotenv(find_dotenv())
+
 
 def generate_summary():
     os.environ['http_proxy'] = "http://127.0.0.1:19180"
@@ -48,7 +48,7 @@ def generate_summary():
         st.text("Please input your text.")
 
     else:
-        summary = summarize(prompt)
+        summary = summarize(prompt, proxies, headers)
         try:
             words = summary[0]["summary_text"]
             st.write(words)

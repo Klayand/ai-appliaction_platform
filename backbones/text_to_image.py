@@ -1,11 +1,10 @@
 import requests
 import io
 from PIL import Image
-from utils import proxies, headers
 import time
 
 
-def text_to_image(text):
+def text_to_image(text, proxies, headers):
 
     API_URL = "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5"
 

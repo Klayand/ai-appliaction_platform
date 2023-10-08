@@ -1,10 +1,8 @@
 import time
-from dotenv import find_dotenv, load_dotenv
 import requests
-from utils import proxies, headers
 
 
-def text_to_audio(text):
+def text_to_audio(text, proxies, headers):
 
     API_URL = "https://api-inference.huggingface.co/models/facebook/musicgen-small"
 

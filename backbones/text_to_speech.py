@@ -1,10 +1,9 @@
 import requests
-from utils import proxies, headers
 import time
 import os
 
 
-def text_to_speech(sentence):
+def text_to_speech(sentence, proxies, headers):
     API_URL = "https://api-inference.huggingface.co/models/facebook/fastspeech2-en-ljspeech"
 
     os.environ['http_proxy'] = os.getenv('HTTPS_PROXY')

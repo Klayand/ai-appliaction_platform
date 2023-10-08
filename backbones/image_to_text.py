@@ -1,8 +1,7 @@
 import requests
-from utils import proxies, headers
 
 
-def image_to_text(filename):
+def image_to_text(filename, proxies, headers):
     API_URL = "https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-large"
 
     with open(filename, "rb") as f:
