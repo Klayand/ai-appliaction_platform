@@ -2,8 +2,6 @@ import requests
 from utils import headers, proxies
 from dotenv import find_dotenv, load_dotenv
 
-load_dotenv(find_dotenv())
-
 
 def summarize(text: str):
     API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"

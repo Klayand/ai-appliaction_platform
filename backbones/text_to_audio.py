@@ -3,8 +3,6 @@ from dotenv import find_dotenv, load_dotenv
 import requests
 from utils import proxies, headers
 
-load_dotenv(find_dotenv())
-
 
 def text_to_audio(text):
 
