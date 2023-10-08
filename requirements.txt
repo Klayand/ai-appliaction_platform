@@ -1,0 +1,10 @@
+streamlit~=1.26.0
+python-dotenv~=1.0.0
+torch~=2.0.1
+pillow~=9.5.0
+scikit-image~=0.21.0
+torchvision~=0.15.2
+numpy~=1.24.4
+opencv-python~=4.8.0.76
+requests~=2.31.0
+langchain~=0.0.309
