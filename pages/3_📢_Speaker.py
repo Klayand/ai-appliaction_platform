@@ -1,14 +1,14 @@
 import streamlit as st
 from backbones import image_to_text, text_to_speech, text_to_text
 import os
-from utils import show_icon, proxies, headers
+from utils import show_icon, headers
 from dotenv import find_dotenv, load_dotenv
 
 load_dotenv(find_dotenv())
 
 
 def generate_speech():
-    os.environ['http_proxy'] = "http://127.0.0.1:19180"
+    # os.environ['http_proxy'] = "http://127.0.0.1:19180"
 
     st.set_page_config(page_title='Story from Image', page_icon=":rainbow:")
 
@@ -49,7 +49,7 @@ def generate_speech():
         st.image(uploaded_file, caption="Uploaded Image.",
                  use_column_width=True)
 
-        scenario = image_to_text(uploaded_file.name, proxies, headers)
+        scenario = image_to_text(uploaded_file.name, headers)
 
         with st.expander("caption"):
             st.write(scenario[0]['generated_text'])
@@ -58,7 +58,7 @@ def generate_speech():
         with st.expander("story"):
             st.write(story)
 
-        speech_name = text_to_speech(story, proxies, headers)
+        speech_name = text_to_speech(story, headers)
         st.audio(speech_name)
 
         st.download_button(
