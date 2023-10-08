@@ -1,6 +1,7 @@
 # ✨ AI Application App ✨
-
 _AI application platform: where art meets algorithms and dreams meet pixels!_ 🚀
+
+### Author: Zikai Zhou
 
 ![Smoking Tiger](./gallery/A_smoking_tiger.png)
 
