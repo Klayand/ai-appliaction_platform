@@ -5,7 +5,7 @@ import argparse
 import streamlit as st
 
 
-# proxies = {'http': os.getenv('HTTPS_PROXY')}
+proxies = {'http': os.getenv('HTTPS_PROXY')}
 HUGGINGFACE_API_KEY = os.getenv('HUGGINGFACE_API_TOKEN')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 # headers = {"Authorization": f"Bearer {HUGGINGFACE_API_KEY}"}

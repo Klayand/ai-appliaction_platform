@@ -1,14 +1,14 @@
 import streamlit as st
 from backbones import text_to_audio
 import os
-from utils import show_icon, headers
+from utils import show_icon, proxies, headers
 from dotenv import find_dotenv, load_dotenv
 
 load_dotenv(find_dotenv())
 
 
 def generate_audio():
-    # os.environ['http_proxy'] = "http://127.0.0.1:19180"
+    os.environ['http_proxy'] = "http://127.0.0.1:19180"
 
     st.set_page_config(page_title='Your Own Music Assistant', page_icon=":musical_keyboard:")
 
@@ -43,7 +43,7 @@ def generate_audio():
         value="")
 
     if len(prompt):
-        audio_name = text_to_audio(prompt, headers)
+        audio_name = text_to_audio(prompt, proxies, headers)
 
         st.audio(audio_name)
 
