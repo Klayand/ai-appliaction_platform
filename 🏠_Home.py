@@ -8,6 +8,7 @@ from streamlit.runtime.scriptrunner import RerunData, RerunException
 
 load_dotenv(find_dotenv())
 
+
 def redirect(page_name: str):
     """A hack to make streamlit redirect to a different page"""
     raise RerunException(RerunData(page_name=page_name))

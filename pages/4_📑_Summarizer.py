@@ -3,14 +3,14 @@ from io import StringIO
 import streamlit as st
 from backbones import summarize
 import os
-from utils import show_icon, proxies, headers
+from utils import show_icon, headers
 from dotenv import find_dotenv, load_dotenv
 
 load_dotenv(find_dotenv())
 
 
 def generate_summary():
-    os.environ['http_proxy'] = "http://127.0.0.1:19180"
+    # os.environ['http_proxy'] = "http://127.0.0.1:19180"
 
     st.set_page_config(page_title='Your Summary Assistant', page_icon=":memo:")
 
@@ -48,7 +48,7 @@ def generate_summary():
         st.text("Please input your text.")
 
     else:
-        summary = summarize(prompt, proxies, headers)
+        summary = summarize(prompt, headers)
         try:
             words = summary[0]["summary_text"]
             st.write(words)

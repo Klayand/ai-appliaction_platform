@@ -1,14 +1,14 @@
 import streamlit as st
 from backbones import text_to_image
 import os
-from utils import show_icon, proxies, headers
+from utils import show_icon, headers
 from dotenv import find_dotenv, load_dotenv
 
 load_dotenv(find_dotenv())
 
 
 def generate_image():
-    os.environ['http_proxy'] = "http://127.0.0.1:19180"
+    # os.environ['http_proxy'] = "http://127.0.0.1:19180"
 
     st.set_page_config(page_title='Generate Your Own Image', page_icon=":bridge_at_night:")
 
@@ -42,7 +42,7 @@ def generate_image():
         "## :orange[**Enter prompt: start typing, Brainstorm :writing_hand:**](alt+enter --> run). e.g. An astronaut riding a rainbow unicorn, cinematic, dramatic.")
 
     if len(prompt):
-        image_name = text_to_image(prompt, proxies, headers)
+        image_name = text_to_image(prompt, headers)
 
         st.image(image_name)
 
