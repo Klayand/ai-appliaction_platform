@@ -1,5 +1,5 @@
 import streamlit as st
-from backbones import image_to_text, text_to_speech, text_to_text
+from backbones import image_to_text, text_to_speech
 import os
 from utils import show_icon, headers
 from dotenv import find_dotenv, load_dotenv
@@ -52,20 +52,33 @@ def generate_speech():
         scenario = image_to_text(uploaded_file.name, headers)
 
         with st.expander("caption"):
-            st.write(scenario[0]['generated_text'])
+            try:
+                st.write(scenario[0]['generated_text'])
+            except:
+                st.write(":rainbow[Heavy traffic] :racing_car:, :rainbow[Please refresh this page.] :sweat_smile:")
 
-        story = text_to_text(scenario)
-        with st.expander("story"):
-            st.write(story)
-
-        speech_name = text_to_speech(story, headers)
-        st.audio(speech_name)
-
-        st.download_button(
-            label="Download Speech",
-            data=open(speech_name, 'rb'),
-            file_name=speech_name,
+        # story = text_to_text(scenario)
+        story = st.text_area(
+            label="# :rainbow[You can write a short story based on the caption] :innocent:"
         )
+
+        submit_state = st.button(label="Done :sunglasses: (write or not please first submit :kissing_heart:)")
+
+        if submit_state:
+            if len(story) == 0:
+                story = scenario[0]['generated_text']
+
+            with st.expander("story"):
+                st.write(story)
+
+            speech_name = text_to_speech(story, headers)
+            st.audio(speech_name)
+
+            st.download_button(
+                label="Download Speech",
+                data=open(speech_name, 'rb'),
+                file_name=speech_name,
+            )
 
 
 generate_speech()
