@@ -1,5 +1,6 @@
 # ✨ AI Application App ✨
-[_AI application platform: where art meets algorithms and dreams meet pixels!_ 🚀]((https://klayand-ai-appliaction.streamlit.app/))
+_AI application platform: where art meets algorithms and dreams meet pixels!_ 🚀
+Links: https://klayand-ai-appliaction.streamlit.app/
 
 ### Author: Zikai Zhou
 
